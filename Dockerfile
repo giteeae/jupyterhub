@@ -11,7 +11,7 @@ WORKDIR /root
    apk update && \
    apk upgrade && \
    apk add python3 py3-pip vim nodejs npm jq moreutils gcc libc-dev python3-dev g++ linux-headers linux-pam openjdk17-jdk zip && \
-   python3 -m pip install jupyterhub jupyterlab notebook jupyterlab-language-pack-es-ES && \
+   python3 -m pip install jupyterhub jupyterlab notebook jupyterlab-language-pack-es-ES nbgrader && \
    npm install -g configurable-http-proxy && \
    jupyterhub --generate-config && \
    cat /usr/share/jupyter/kernels/python3/kernel.json | jq '.display_name = "Python 3"' | sponge /usr/share/jupyter/kernels/python3/kernel.json && \

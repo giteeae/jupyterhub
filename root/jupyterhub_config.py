@@ -1,6 +1,13 @@
 # Configuration file for jupyterhub.
+import os
+
 
 c = get_config()  # noqa
+c.Authenticator.admin_users = {'admin'}
+#c.Spawner.default_url = '/tree/home/{username}'
+c.Spawner.notebook_dir = '/home/{username}'
+
+os.umask(0o0027)
 
 #------------------------------------------------------------------------------
 # Application(SingletonConfigurable) configuration
